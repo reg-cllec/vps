@@ -1,4 +1,6 @@
 if ip address or domain name  or website not work, <span style="color:red;">clear cache may resolve the problem</span>
+<span style="color:red;">This text will be red.</span>
+
 
 Get your Always Free Oracle Cloud Server ready
 ----------------------------------------------
