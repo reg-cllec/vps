@@ -8,7 +8,11 @@ Create public DNS record
 
 The exact process in this step will depend on who your Domain Name provider is. Luckily the concept is the same, and all you need to do is create an A record that points your domain to the reserved IP you have assigned to your virtual server on Oracle Cloud. In my video tutorial I am creating a DNS record with Namecheap, the process should be similar with other providers.
 
-Open ports 80 HTTP and 443 HTTPS in iptables
+bind to a reserved IP address(Optional but recommend)
+------------------------
+bind to a reserved IP address
+
+Open ports 80 HTTP and 443 HTTPS in iptables(not required as oracle vps already did that)
 --------------------------------------------
 
 Iptables is by default installed and active on Ubuntu server on Oracle Cloud, and you will need to take an extra step and open ports 80 and 443 on it as well. You can do it by running the following commands.
