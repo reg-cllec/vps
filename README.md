@@ -35,8 +35,12 @@ Install Prerequisites (PHP, MariaDB, PHP modules, etc.)
 
 You will need to run the commands below to update your system, and install the listed packages as they are required by WordPress.
 
+```bash
     apt update && apt -y upgrade
+```
+```bash
     apt install apache2 ghostscript libapache2-mod-php mariadb-server php php-bcmath php-curl php-imagick php-intl php-json php-mbstring  php-mysql php-xml php-zip wget unzip
+```
 
 Configure MariaDB Database
 --------------------------
@@ -47,22 +51,25 @@ Connect to MariaDB database server.
 
 Once you connect successfully to the database server, create WordPress database and user. You can do it by running the following commands. Make sure to replace “password1” with better, more secure password.
 
+```bash
     CREATE DATABASE wp_db;
     CREATE USER wp_user@localhost IDENTIFIED BY 'password1';
     GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON wp_db.* TO wp_user@localhost;
     FLUSH PRIVILEGES;
     quit
+```
 
 Install WordPress
 -----------------
 
 The next step would be to download, install, and set appropriate file permissions on latest WordPress. To do that, run the following commands.
-
+```bash
     wget https://wordpress.org/latest.zip
     unzip latest.zip
     mv wordpress/ /var/www/html/
     chown www-data:www-data -R /var/www/html/wordpress/
     chmod -R 755 /var/www/html/wordpress/
+```
 
 Configure Apache Virtual Host
 -----------------------------
