@@ -110,6 +110,22 @@ Once you have you vhost file created go ahead and disable the default virtual ho
     a2enmod rewrite
     service apache2 reload
 
+Add php file type pasing
+-----------------------------
+```bash
+vi /etc/apache2/apache2.conf
+```
+add this to apache2.conf to parse php file
+```bash
+<FilesMatch \.php$>
+    SetHandler application/x-httpd-php
+</FilesMatch>
+```
+restart apache
+```bash
+sudo systemctl restart apache2
+```
+
 Complete WordPress Installation
 -------------------------------
 
