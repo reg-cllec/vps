@@ -30,6 +30,11 @@ Iptables is by default installed and active on Ubuntu server on Oracle Cloud, an
 ```bash
     iptables-restore /etc/iptables/rules.v4
 ```
+
+check if 80 port is open or not
+
+https://www.yougetsignal.com/tools/open-ports/
+
 Install Prerequisites (PHP, MariaDB, PHP modules, etc.)
 -------------------------------------------------------
 
