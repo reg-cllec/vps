@@ -31,8 +31,13 @@ Before proceeding with any changes, ensure you have a backup of your website, pa
 ## Delete WordPress Files
 
 1. Navigate to the directory where WordPress resides on your server.
+   ```bash
+   cd /var/www/html/
+   ```
 2. Remove all WordPress files and directories, excluding custom directories like `wp-content`.
-
+    ```bash
+   rm -rf wordpress/
+   ```
 ## Reinstall WordPress
 
 1. Download the latest version of WordPress from the [official website](https://wordpress.org/download/).
