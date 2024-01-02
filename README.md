@@ -57,11 +57,23 @@ Connect to MariaDB database server.
 Once you connect successfully to the database server, create WordPress database and user. You can do it by running the following commands. Make sure to replace “password1” with better, more secure password.
 
 ```bash
-    CREATE DATABASE wp_db;
-    CREATE USER wp_user@localhost IDENTIFIED BY 'password1';
-    GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON wp_db.* TO wp_user@localhost;
-    FLUSH PRIVILEGES;
-    quit
+CREATE DATABASE wp_db;
+```
+
+```bash
+ CREATE USER wp_user@localhost IDENTIFIED BY 'password1';
+```
+
+```bash
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON wp_db.* TO wp_user@localhost;
+```
+
+```bash
+FLUSH PRIVILEGES;
+```
+
+```bash
+quit
 ```
 
 Install WordPress
