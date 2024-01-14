@@ -22,6 +22,20 @@ add permission to ssh key
 chmod 600 ssh-key-2024-01-14.key
 ```
 
+add password to root
+------------------------
+```bash
+sudo su
+```
+```bash
+passwd
+```
+update server
+------------------------
+```bash
+apt update && apt -y upgrade
+```
+
 Open ports 80 HTTP and 443 HTTPS in iptables
 --------------------------------------------
 
@@ -53,13 +67,19 @@ You will need to run the commands below to update your system, and install the l
     apt install apache2 ghostscript libapache2-mod-php mariadb-server php php-bcmath php-curl php-imagick php-intl php-json php-mbstring  php-mysql php-xml php-zip wget unzip
 ```
 
+secure mysql databse
+------------------------
+```bash
+mysql_secure_installation
+```
+
 Configure MariaDB Database
 --------------------------
 
 Connect to MariaDB database server.
-
+```bash
     sudo mysql -u root -p
-
+```
 Once you connect successfully to the database server, create WordPress database and user. You can do it by running the following commands. Make sure to replace “password1” with better, more secure password.
 
 ```bash
@@ -86,11 +106,20 @@ Install WordPress
 -----------------
 
 The next step would be to download, install, and set appropriate file permissions on latest WordPress. To do that, run the following commands.
+
 ```bash
     wget https://wordpress.org/latest.zip
+```
+```bash
     unzip latest.zip
+```
+```bash
     mv wordpress/ /var/www/html/
+```
+```bash
     chown www-data:www-data -R /var/www/html/wordpress/
+```
+```bash
     chmod -R 755 /var/www/html/wordpress/
 ```
 
@@ -98,11 +127,11 @@ Configure Apache Virtual Host
 -----------------------------
 
 Create new vhost in “/etc/apache2/sites-available/” by running the command below.
-
+```bash
     nano /etc/apache2/sites-available/wordpress.conf
-
+```
 Add the content from the box below to your wordpress.conf make sure to replace the ServerName directive with your domain name. That will be the same name you created public record for in the “Create public DNS record” step.
-
+```bash
     <VirtualHost *:80>
     
         DocumentRoot /var/www/html/wordpress/
@@ -120,13 +149,20 @@ Add the content from the box below to your wordpress.conf make sure to replace t
         CustomLog ${APACHE_LOG_DIR}/access.log combined
     
     </VirtualHost>
-
+```
 Once you have you vhost file created go ahead and disable the default virtual host, enable the virtual host you just created, along with apache rewrite mode by running the following commands.
-
+```bash
     a2dissite 000-default
+```
+```bash
     a2ensite wordpress
+```
+```bash
     a2enmod rewrite
+```
+```bash
     service apache2 reload
+```
 
 Add php file type pasing
 -----------------------------
