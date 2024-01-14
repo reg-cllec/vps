@@ -16,6 +16,12 @@ bind to a reserved IP address(Optional but recommend)
 ------------------------
 bind to a reserved IP address
 
+add permission to ssh key
+------------------------
+```bash
+chmod 600 ssh-key-2024-01-14.key
+```
+
 Open ports 80 HTTP and 443 HTTPS in iptables
 --------------------------------------------
 
