@@ -140,7 +140,7 @@ Configure Apache Virtual Host
 
 Create new vhost in “/etc/apache2/sites-available/” by running the command below.
 ```bash
-nano /etc/apache2/sites-available/wordpress.conf
+sudo vi /etc/apache2/sites-available/wordpress.conf
 ```
 Add the content from the box below to your wordpress.conf make sure to replace the ServerName directive with your domain name. That will be the same name you created public record for in the “Create public DNS record” step.
 ```bash
