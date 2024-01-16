@@ -41,7 +41,7 @@ Open ports 80 HTTP and 443 HTTPS in iptables
 
 Iptables is by default installed and active on Ubuntu server on Oracle Cloud, and you will need to take an extra step and open ports 80 and 443 on it as well. You can do it by running the following commands.
 ```bash
-    sudo vi /etc/iptables/rules.v4
+sudo vi /etc/iptables/rules.v4
 ```
 ```bash
 iptables -I INPUT -p tcp -m tcp --dport 80 -j ACCEPT
@@ -52,8 +52,16 @@ iptables-restore /etc/iptables/rules.v4
 ```
 
 check if 80 port is open or not
+-------------------------------------------------------
 
 https://www.yougetsignal.com/tools/open-ports/
+
+Reboot if 80 port not open
+-------------------------------------------------------
+reboot and verify if 80 and 443 add correctly
+```bash
+sudo vi /etc/iptables/rules.v4
+```
 
 Install Prerequisites (PHP, MariaDB, PHP modules, etc.)
 -------------------------------------------------------
