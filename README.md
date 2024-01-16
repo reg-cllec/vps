@@ -97,6 +97,10 @@ CREATE DATABASE wp_db;
 ```bash
 CREATE USER wp_user@localhost IDENTIFIED BY 'password1';
 ```
+update user password if needed
+```bash
+ALTER USER wp_user@localhost IDENTIFIED BY 'new_password';
+```
 
 ```bash
 GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON wp_db.* TO wp_user@localhost;
