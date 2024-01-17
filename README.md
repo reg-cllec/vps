@@ -217,9 +217,14 @@ Get Free Let’s Encrypt SSL Certificate
 --------------------------------------
 
 The easiest way to get free Let’s Encrypt Certificate and secure your WordPress site is to use apache plugin “python3-certbot-apache”. To get the plugin and install certificates run the following commands.
+```bash
+apt install python3-certbot-apache
+```
 
-    apt install python3-certbot-apache
-    certbot --apache
+```bash
+certbot --apache
+```
+
 
 Follow the onscreen instructions to complete SSL certificate creation and installation.
 
