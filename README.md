@@ -192,6 +192,16 @@ restart apache
 sudo systemctl restart apache2
 ```
 
+update php upload max file size
+------------------------
+```bash
+sudo vi /etc/php/8.1/apache2/php.ini
+```
+in vi editor
+```bash
+/post_max_size
+```
+
 Complete WordPress Installation
 -------------------------------
 
