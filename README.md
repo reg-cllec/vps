@@ -199,7 +199,7 @@ sudo vi /etc/php/8.1/apache2/php.ini
 ```
 in vi editor
 ```bash
-/post_max_size
+/upload_max_filesize
 ```
 
 Complete WordPress Installation
