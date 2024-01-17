@@ -22,6 +22,12 @@ add permission to ssh key
 chmod 600 ssh-key-2024-01-14.key
 ```
 
+Delete used IP record in known_host
+------------------------
+```bash
+vi ~/.ssh/known_hosts
+```
+
 add password to root
 ------------------------
 ```bash
