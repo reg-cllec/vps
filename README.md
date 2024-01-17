@@ -44,8 +44,8 @@ Iptables is by default installed and active on Ubuntu server on Oracle Cloud, an
 sudo vi /etc/iptables/rules.v4
 ```
 ```bash
-iptables -I INPUT -p tcp -m tcp --dport 80 -j ACCEPT
-iptables -I INPUT -p tcp -m tcp --dport 443 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 443 -j ACCEPT
 ```
 ```bash
 iptables-restore /etc/iptables/rules.v4
