@@ -4,6 +4,10 @@
 
 - Access your MySQL database using a tool like phpMyAdmin or the command line.
 - Export the database to a SQL file using the following command:
+Connect to MariaDB database server.
+```bash
+sudo mysql -u root -p
+```
   
 ```bash
 mysqldump -u username -p dbname > backup.sql
@@ -16,13 +20,16 @@ mysqldump -u username -p dbname > backup.sql
 
 - Connect to your VPS via SSH.
 - Navigate to your WordPress installation directory. Usually under `/var/www/html/` or `/var/www/`.
+```bash
+cd /var/www/html/
+```
 - Create a compressed archive of all your WordPress files using the command:
 
 ```bash
-tar -czvf wordpress_backup.tar.gz /path/to/your/wordpress
+tar -czvf wordpress_backup.tar.gz /var/www/html/wordpress
 ```
 
-- Replace "/path/to/your/wordpress" with the actual path to your WordPress files.
+- Replace "/var/www/html/wordpress" with the actual path to your WordPress files.
 
 ## 3. Transfer Backups
 
