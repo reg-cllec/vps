@@ -5,13 +5,12 @@
 - Access your MySQL database using a tool like phpMyAdmin or the command line.
 - Export the database to a SQL file using the following command:
 Connect to MariaDB database server.
+
 ```bash
-sudo su
-cd
+mysql -u wp_user -p -e "SHOW DATABASES;"
 ```
-  
 ```bash
-mysqldump -u root -p wp_db > backup.sql
+sudo mysqldump -u root -p wp_db > backup.sql
 ```
 
 - Replace "username" with your MySQL username.
