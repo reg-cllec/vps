@@ -6,11 +6,12 @@
 - Export the database to a SQL file using the following command:
 Connect to MariaDB database server.
 ```bash
-sudo mysql -u root -p
+sudo su
+cd
 ```
   
 ```bash
-mysqldump -u username -p dbname > backup.sql
+mysqldump -u root -p wp_db > backup.sql
 ```
 
 - Replace "username" with your MySQL username.
@@ -22,11 +23,14 @@ mysqldump -u username -p dbname > backup.sql
 - Navigate to your WordPress installation directory. Usually under `/var/www/html/` or `/var/www/`.
 ```bash
 cd /var/www/html/
+ll
+```
+```bash
+cd
 ```
 - Create a compressed archive of all your WordPress files using the command:
-
 ```bash
-tar -czvf wordpress_backup.tar.gz /var/www/html/wordpress
+tar -czvf cangku_wp_backup.tar.gz /var/www/html/wordpress
 ```
 
 - Replace "/var/www/html/wordpress" with the actual path to your WordPress files.
@@ -34,6 +38,12 @@ tar -czvf wordpress_backup.tar.gz /var/www/html/wordpress
 ## 3. Transfer Backups
 
 - Download the SQL dump and the compressed file to your local machine using secure methods like SCP or SFTP.
+```bash
+scp -i /Users/mikeng/.ssh/ssh-key-2024-01-14.key ubuntu@wordpress.com:/home/ubuntu/backup.sql /Users/mikeng/Downloads/
+```
+```bash
+scp -i /Users/mikeng/.ssh/ssh-key-2024-01-14.key ubuntu@wordpress.com:/home/ubuntu/cangku_wp_backup.tar.gz /Users/mikeng/Downloads/
+```
 
 ## 4. Verify Backups
 
