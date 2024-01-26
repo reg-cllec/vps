@@ -5,7 +5,7 @@
 Log in to your MySQL server using the command line. You will be prompted to enter your MySQL user password.
 
 ```
-mysql -u username -p
+mysql -u root -p
 ```
 
 Replace `username` with your MySQL username.
@@ -15,7 +15,7 @@ Replace `username` with your MySQL username.
 If you want to restore your backup to a new database, you can create one:
 
 ```sql
-CREATE DATABASE new_database_name;
+CREATE DATABASE wp_db;
 ```
 
 Replace `new_database_name` with the desired name for your new database.
@@ -25,7 +25,7 @@ Replace `new_database_name` with the desired name for your new database.
 Switch to the database where you want to restore your backup:
 
 ```sql
-USE database_name;
+USE wp_db;
 ```
 
 Replace `database_name` with the name of the database you want to use.
@@ -35,7 +35,7 @@ Replace `database_name` with the name of the database you want to use.
 Run the following command to restore the database from your backup file:
 
 ```
-mysql -u username -p database_name < /path/to/backup.sql
+mysql -u root -p wp_db < /path/to/backup.sql
 ```
 
 Replace:
@@ -46,7 +46,7 @@ Replace:
 ### Example:
 
 ```
-mysql -u root -p mywordpressdb < /path/to/backup.sql
+mysql -u root -p wp_db < /path/to/backup.sql
 ```
 
 ## 5. Verify the Restoration
@@ -54,8 +54,8 @@ mysql -u root -p mywordpressdb < /path/to/backup.sql
 Log in to MySQL again and check if the tables and data have been successfully restored:
 
 ```
-mysql -u username -p
-USE database_name;
+mysql -u root -p
+USE wp_db;
 SHOW TABLES;
 ```
 
