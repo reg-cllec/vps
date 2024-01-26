@@ -38,7 +38,7 @@ tar -czvf cangku_wp_backup.tar.gz /var/www/html/wordpress
 
 - Download the SQL dump and the compressed file to your local machine using secure methods like SCP or SFTP.
 ```bash
-scp -i /Users/mikeng/.ssh/ssh-key-2024-01-14.key ubuntu@wordpress.com:/home/ubuntu/backup.sql /Users/mikeng/Downloads/
+/Users/mikeng/Documents/apps/google-cloud-sdk/bin/gcloud compute scp mikeng@wpfairprice:/home/mikeng/backup.sql /Users/mikeng/Downloads
 ```
 ```bash
 scp -i /Users/mikeng/.ssh/ssh-key-2024-01-14.key ubuntu@wordpress.com:/home/ubuntu/cangku_wp_backup.tar.gz /Users/mikeng/Downloads/
