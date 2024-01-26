@@ -35,7 +35,7 @@ Replace `database_name` with the name of the database you want to use.
 Run the following command to restore the database from your backup file:
 
 ```
-mysql -u wp_user -p wp_db < /Users/mikeng/Documents/website/uscangku/backup/20240125/backup.sql
+mysql -u wp_user -p wp_db < /Users/mikeng/Documents/website/cangku/backup/20240125/backup.sql
 ```
 
 Replace:
