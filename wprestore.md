@@ -15,7 +15,25 @@ Replace `username` with your MySQL username.
 If you want to restore your backup to a new database, you can create one:
 
 ```sql
+DROP DATABASE wp_db;
+```
+```sql
+DROP USER wp_user@localhost;
+```
+```sql
 CREATE DATABASE wp_db;
+```
+```sql
+CREATE USER wp_user@localhost IDENTIFIED BY 'password1';
+```
+```sql
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON wp_db.* TO wp_user@localhost;
+```
+```sql
+FLUSH PRIVILEGES;
+```
+```sql
+quit
 ```
 
 Replace `new_database_name` with the desired name for your new database.
